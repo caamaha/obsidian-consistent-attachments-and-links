@@ -49,7 +49,7 @@ export class SettingTab extends PluginSettingTab {
 
         new Setting(containerEl)
             .setName('Move Attachments with Note')
-            .setDesc('Automatically move attachments when a note is relocated. This includes attachments located in the same folder or any of its subfolders.')
+            .setDesc('Automatically move attachments when a note is relocated, including attachments in the defined attachments subfolder (Attachment Subfolder) or in the same directory as the note.')
             .addToggle(cb => cb.onChange(value => {
                 this.plugin.settings.moveAttachmentsWithNote = value;
                 this.plugin.saveSettings();

@@ -1,10 +1,10 @@
 {
 	"id": "consistent-attachments-and-links",
-	"name": "Consistent Attachments and Links",
-	"version": "1.3.0",
+	"name": "Consistent Attachments and Links (Modified by Soe)",
+	"version": "1.3.1",
 	"minAppVersion": "0.9.12",
 	"description": "This plugin ensures the consistency of attachments and links",
-	"author": "Dmitry Savosh",
+	"author": "Dmitry Savosh & Modified by Soe",
 	"authorUrl": "https://github.com/dy-sh/",
 	"isDesktopOnly": false
 }

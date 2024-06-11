@@ -97,12 +97,15 @@ export class FilesHandler {
 				}
 			}
 
-			//if attachment not in the note folder, skip it
-			// = "." means that note was at root path, so do not skip it
-			if (path.dirname(oldNotePath) != "." && !path.dirname(oldLinkPath).startsWith(path.dirname(oldNotePath)))
-				continue;
-
-			let newLinkPath = this.getNewAttachmentPath(file.path, newNotePath, attachmentsSubfolder);
+            // Check if the attachment is in the defined attachments subfolder
+			let expectedAttachmentFolder = path.join(path.dirname(oldNotePath), attachmentsSubfolder);
+            if (path.dirname(file.path).startsWith(expectedAttachmentFolder)) {
+                var newLinkPath = this.getNewAttachmentPath(file.path, newNotePath, attachmentsSubfolder);
+            } else if (path.dirname(file.path) === path.dirname(oldNotePath)) {
+                var newLinkPath = this.getNewAttachmentPath(file.path, newNotePath, "");
+            } else {
+                continue;
+            }
 
 			if (newLinkPath == file.path) //nothing to move
 				continue;
